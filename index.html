@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Image-Crop-Demo</title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+
+			html,
+			body {
+				height: 100%;
+			}
+
+			body,
+			.left-area {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+			}
+
+			.left-area {
+				flex-direction: column;
+				align-items: flex-start;
+			}
+
+			.left-area h1 {
+				margin-bottom: 24px;
+			}
+
+			.canvas-container {
+				width: 600px;
+				height: 600px;
+				box-shadow: 0 0 12px 6px rgba(0, 0, 0, 0.2);
+			}
+		</style>
+		<script src="https://unpkg.com/konva@9/konva.min.js"></script>
+	</head>
+	<body>
+		<div class="left-area">
+			<h1>Double click to crop</h1>
+			<div>
+				<label for="image-upload">Upload Image</label>
+				<input type="file" id="image-upload" accept="image/jpg, image/jpeg, image/png" />
+			</div>
+		</div>
+		<div class="canvas-container"></div>
+		<script src="./src/KonvaImage.js"></script>
+		<script src="./src/ScaleTransformer.js"></script>
+		<script src="./src/BaseScene.js"></script>
+		<script src="./src/CropScene.js"></script>
+		<script src="./src/SceneManager.js"></script>
+		<script src="./index.js"></script>
+	</body>
+</html>
