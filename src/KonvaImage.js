@@ -63,6 +63,9 @@ class KonvaImage extends Konva.Image {
 				ratio = curSize.width / lastSize.width;
 				newCropWidth = lastCrop.width * ratio;
 				this.cropWidth(newCropWidth);
+				if (anchor === "middle-left") {
+          this.cropX(lastCrop.x + lastCrop.width - newCropWidth);
+        }
 			} else {
 				ratio = lastCrop.height / lastSize.height;
 				newCropWidth = curSize.width * ratio;
@@ -79,6 +82,9 @@ class KonvaImage extends Konva.Image {
 				ratio = curSize.height / lastSize.height;
 				newCropHeight = lastCrop.height * ratio;
 				this.cropHeight(newCropHeight);
+				if (anchor === "top-center") {
+          this.cropY(lastCrop.y + lastCrop.height - newCropHeight);
+        }
 			} else {
 				ratio = lastCrop.width / lastSize.width;
 				newCropHeight = curSize.height * ratio;
